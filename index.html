@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dice Roller</title>
+<style>
+    .roll{
+        font-size: 22px;
+    }
+    #result {
+        width: 400px; /* Specify the width of the div */
+        height: 400px; /* Specify the height of the div */
+        margin: 0 auto; /* Center the div horizontally */
+        display: flex; /* Use flexbox layout */
+        justify-content: center; /* Center the image horizontally */
+        align-items: center; /* Center the image vertically */
+    }
+
+    #result img {
+        max-width: 100%; /* Ensure the image does not exceed the width of the div */
+        max-height: 100%; /* Ensure the image does not exceed the height of the div */
+    }
+
+.btn{
+    font-size: 30px;
+    background-color: black;
+    color: antiquewhite;
+    cursor: pointer;
+    margin-top: 20px;
+    
+}
+</style>
+</head>
+<body>
+<!-- <a href="javascript:void(0)" onclick="roll()" class="roll">Roll</a> -->
+<button onclick="roll()" class="btn">Roll Dice</button>
+<div id="result"></div>
+<script>
+    
+        function roll() {
+            document.getElementById('result').innerHTML = "<img src='image/loader1.gif'/>";
+            setTimeout(function() {
+                let rand = Math.floor(Math.random() * 6) + 1;
+                document.getElementById('result').innerHTML = "<img src='image/" + rand + ".png'/>";
+            }, 2000);
+        }
+</script>
+</body>
+</html>
